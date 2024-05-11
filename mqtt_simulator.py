@@ -91,20 +91,7 @@ json_send = {
 mqtt_client = MqttClient("IoT_Industrial", "192.168.1.165", 1883)
 mqtt_client.start()
 
-
-
-# for msg in range(0,10):
-#     json_send = {
-#                 "vib1": msg,
-#                 "vib2": 45,
-#                 "temp1": 23.5,
-#                 "humid2": 77
-#             }
-    
-#     mqtt_client.publish_message("IoT_Industrial", json.dumps(json_send))
-#     time.sleep(1)
-    
-    
+  
 thread_vib_sim_1 = Thread(target=vib_sim, name="thread_vib_sim_1", args = (20, 1, mqtt_client, "IoT_Industrial/Vib1" ))
 thread_vib_sim_2 = Thread(target=vib_sim, name="thread_vib_sim_2", args = (30, 0.2, mqtt_client, "IoT_Industrial/Vib2" ))
 thread_vib_sim_3 = Thread(target=vib_sim, name="thread_vib_sim_3", args = (30, 2, mqtt_client, "IoT_Industrial/Vib3" ))
