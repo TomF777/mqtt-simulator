@@ -1,4 +1,4 @@
-# create virt env fro the project:
+# create virt env for the project:
 python -m venv myvenv
 
 # activate the virt. env (Windows):
