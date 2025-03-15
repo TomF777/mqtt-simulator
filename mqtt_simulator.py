@@ -92,14 +92,14 @@ mqtt_client = MqttClient("IoT_Industrial", "192.168.1.165", 1883)
 mqtt_client.start()
 
   
-thread_vib_sim_1 = Thread(target=vib_sim, name="thread_vib_sim_1", args = (20, 1, mqtt_client, "IoT_Industrial/Vib1" ))
-thread_vib_sim_2 = Thread(target=vib_sim, name="thread_vib_sim_2", args = (30, 0.2, mqtt_client, "IoT_Industrial/Vib2" ))
-thread_vib_sim_3 = Thread(target=vib_sim, name="thread_vib_sim_3", args = (30, 2, mqtt_client, "IoT_Industrial/Vib3" ))
+vib_sim_1 = Thread(target=vib_sim, name="vib_sim_1", args = (20, 1, mqtt_client, "IoT_Industrial/Vib1" ))
+vib_sim_2 = Thread(target=vib_sim, name="vib_sim_2", args = (30, 0.2, mqtt_client, "IoT_Industrial/Vib2" ))
+vib_sim_3 = Thread(target=vib_sim, name="vib_sim_3", args = (30, 2, mqtt_client, "IoT_Industrial/Vib3" ))
 
-thread_temp_humid_sim_1 = Thread(target=temp_humid_sim_1, name="thread_temp_humid_sim_1", args = (24, 50, mqtt_client, "IoT_Industrial/TempHumid1" ))
+temp_humid_sim_1 = Thread(target=temp_humid_sim_1, name="temp_humid_sim_1", args = (24, 50, mqtt_client, "IoT_Industrial/TempHumid1" ))
 
-thread_vib_sim_1.start()
-thread_vib_sim_2.start()
-thread_vib_sim_3.start()
-thread_temp_humid_sim_1.start()
+vib_sim_1.start()
+vib_sim_2.start()
+vib_sim_3.start()
+temp_humid_sim_1.start()
 
